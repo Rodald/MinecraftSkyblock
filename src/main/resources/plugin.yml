@@ -1,0 +1,4 @@
+name: MinecraftSkyblock
+version: '1.0-SNAPSHOT'
+main: net.rodald.minecraftSkyblock.MinecraftSkyblock
+api-version: '1.21'
