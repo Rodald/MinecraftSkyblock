@@ -1,5 +1,7 @@
 package net.rodald.minecraftSkyblock;
 
+import net.rodald.cerasislib.blocks.BlockLibService;
+import net.rodald.cerasislib.items.ItemLibService;
 import net.rodald.minecraftSkyblock.listener.PlayerInteractListener;
 import net.rodald.minecraftSkyblock.listener.PlayerJoinListener;
 import net.rodald.minecraftSkyblock.listener.PlayerQuitListener;
@@ -19,6 +21,9 @@ public final class MinecraftSkyblock extends JavaPlugin {
         if (!gameMapsFolder.exists()) {
             gameMapsFolder.mkdirs();
         }
+
+        BlockLibService.init(this);
+        ItemLibService.init(this);
 
         getServer().getPluginManager().registerEvents(new PlayerInteractListener(), this);
         getServer().getPluginManager().registerEvents(new PlayerJoinListener(), this);

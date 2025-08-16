@@ -3,6 +3,8 @@ package net.rodald.minecraftSkyblock.listener;
 
 import net.rodald.minecraftSkyblock.Island;
 import net.rodald.minecraftSkyblock.MinecraftSkyblock;
+import net.rodald.minecraftSkyblock.block.Conveyor;
+import net.rodald.minecraftSkyblock.item.LavaChickenItem;
 import net.rodald.minecraftSkyblock.manager.IslandManager;
 import net.rodald.minecraftSkyblock.map.LocalGameMap;
 import org.bukkit.Bukkit;
@@ -62,6 +64,10 @@ public class PlayerJoinListener implements Listener {
 
         // set player spawn in case he dies
         player.setRespawnLocation(island.spawn());
+
+        // DEBUG: give player a lava chicken
+        player.getInventory().addItem(new LavaChickenItem().createItem());
+        player.getInventory().addItem(new Conveyor().createItem());
 
         // teleport player to own island
         // dont have to set gamemode bc island#teleport takes over that
